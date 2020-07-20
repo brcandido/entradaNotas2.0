@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagina Inicial</title>
+        <meta charset="UTF-8" />
+        <meta lang="pt-BR" />
+        <meta name="author" content="Bruno" />
+        <meta name="version" content="0.0.1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <header class="headfoot">
+        <h1 id ="titulo">Gerador de Lista de Notas</h1>
+    </header>
+
+    <body>
+        <div id="formulario">
+        <p class="campo"> Digite o nome do aluno: 
+            <input type="text" id="aluno">
+        </p>
+        <p class="campo">Digite a nota do primeiro bimestre:
+            <input type="number" id="nota1">
+        </p>
+        <p class="campo">Digite a nota do segundo bimestre:
+            <input type="number" id="nota2">
+        </p>
+        <p class="campo">Digite a nota do terceiro bimestre:
+            <input type="number" id="nota3">
+        </p>
+        <p class="campo">Digite a nota do quarto bimestre:
+            <input type="number" id="nota4">
+        </p class="campo">
+        <button onclick="entraAluno()" class="botao">Cadastrar</button>
+        <button onclick="geraTabela()" class="botao">Criar Tabela</button>
+        </div>
+        <p id="premio">
+            
+        </p>
+        <table id="tabelaNotas">
+
+        </table>
+    </body>
+
+    <footer class="headfoot">
+        <p id="data">
+            Florianópolis, 21 de Julho de 2020. All Rights Reserved.
+        <p>
+    </footer>
+
+    <script src="script.js"></script>
+</html>

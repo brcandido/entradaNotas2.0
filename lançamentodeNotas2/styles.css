@@ -1,0 +1,63 @@
+.headfoot{
+    background-color: forestgreen;
+    height: 100px;
+    
+}
+
+.botao:hover{
+    color: ghostwhite;
+    background-color: darkslategrey;
+    font-family: sans-serif;
+}
+
+table{
+    padding-top: 20px;
+}
+
+td {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* border-bottom: 1px solid; */
+    
+}
+
+th {
+    text-align: center;
+    border-bottom: 2px solid;
+    padding-right: 3px;
+    
+}
+
+tr{
+    border-bottom: 1px solid;
+}
+
+
+#data{
+    color: gainsboro;
+    text-align: center;
+    padding-top: 75px;
+}
+
+#titulo{
+    text-align: center;
+    font-family: verdana;
+    color: gainsboro;
+    padding-top: 25px;
+    width: 1000px;
+    margin: 10px auto 10px auto;
+}
+
+#formulario{
+    
+    text-align: center;
+    padding-left: 200px;
+    padding-right: 300px;
+}
+
+.campo{
+    font-family:sans-serif ;
+    text-align: right;
+    padding-right: 200px;
+}
