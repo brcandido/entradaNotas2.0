@@ -52,7 +52,7 @@ function geraTabela(){
     let tabelaNotas = document.getElementById("tabelaNotas")
     let maiorMedia = 0
     let melhorAluno = ''
-    if(turma.length >= 1){
+    if(turma.length >= 15){
         let cabecalho = ["Nome","Prova 1", "Prova 2", "Prova 3", "Prova 4", "Média Final", "Aprovação"];
         let headTabela = document.createElement('THEAD');
         let trHead = document.createElement("TR");
