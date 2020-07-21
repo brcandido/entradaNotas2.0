@@ -19,18 +19,23 @@ function Aluno(nome, nota1, nota2, nota3, nota4, mediaAluno, situacao){
 
 function entraAluno(){
     let media = (parseFloat(notaP1.value)+parseFloat(notaP2.value)+parseFloat(notaP3.value)+parseFloat(notaP4.value))/4
-    if(!isNaN(parseFloat(notaP1.value)) && !isNaN(parseFloat(notaP2.value)) && !isNaN(parseFloat(notaP3.value)) && !isNaN(parseFloat(notaP4.value)) && !isNaN(media)){        
-        if (media >= 7){
-            aprovacao = 'Aprovado'        
+    if(parseFloat(notaP1.value)>=0 && parseFloat(notaP1.value)<=10 && parseFloat(notaP2.value)>=0 && parseFloat(notaP2.value)<=10 && parseFloat(notaP3.value)>=0 && parseFloat(notaP3.value)<=10 && parseFloat(notaP4.value)>=0 && parseFloat(notaP4.value)<=10){
+        if(!isNaN(parseFloat(notaP1.value)) && !isNaN(parseFloat(notaP2.value)) && !isNaN(parseFloat(notaP3.value)) && !isNaN(parseFloat(notaP4.value)) && !isNaN(media)){        
+            if (media >= 7 && media <=10){
+                aprovacao = 'Aprovado'        
+            }        
+            else{
+                aprovacao = 'Reprovado'               
+            }
+            let aluno = new Aluno(nomeAluno.value, notaP1.value, notaP2.value, notaP3.value, notaP4.value, media, aprovacao)
+            turma.push(aluno)
         }
         else{
-            aprovacao = 'Reprovado'               
+            window.alert("Favor preencher todas as informações.")        
         }
-        let aluno = new Aluno(nomeAluno.value, notaP1.value, notaP2.value, notaP3.value, notaP4.value, media, aprovacao)
-        turma.push(aluno)
     }
     else{
-        window.alert("Favor preencher todas as informações.")        
+        window.alert('As notas devem estar entre 0 e 10!')
     }
     console.log(turma)
     
@@ -47,7 +52,7 @@ function geraTabela(){
     let tabelaNotas = document.getElementById("tabelaNotas")
     let maiorMedia = 0
     let melhorAluno = ''
-    if(turma.length >= 15){
+    if(turma.length >= 1){
         let cabecalho = ["Nome","Prova 1", "Prova 2", "Prova 3", "Prova 4", "Média Final", "Aprovação"];
         let headTabela = document.createElement('THEAD');
         let trHead = document.createElement("TR");
@@ -90,7 +95,9 @@ function geraTabela(){
     }
     else{
         window.alert('A turma deve conter NO MÍNIMO 15 alunos!')
-    }    
-    parabens = document.createTextNode(`Parabéns, ${melhorAluno} por ser aprovado com ${maiorMedia}. A maior média da turma!`)
-    premio.appendChild(parabens)
+    }
+    if(maiorMedia != 0){    
+        let parabens = document.createTextNode(`Parabéns, ${melhorAluno} por ser aprovado com ${maiorMedia}. A maior média da turma!`)
+        premio.appendChild(parabens)
+    }
 }
